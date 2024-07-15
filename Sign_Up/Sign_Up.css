@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  /* font-family: "SF Pro Text, Helvetica Neue, sans-serif"; */
+}
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  /* font-family: "San Francisco", "Helvetica", Arial, san-serif; */
+  /* font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
+  /* background: -webkit-linear-gradient(bottom, #fff, #f5f5f5); */
+  background: #fff; /* Fallback color */
+}
+
+.container {
+  width: 330px;
+  background: #f5f5f5;
+  border-radius: 5px;
+  text-align: center;
+  padding: 50px 35px 10px 35px;
+}
+
+.container header {
+  font-size: 35px;
+  font-weight: 500;
+  margin: 0 0 10px 0;
+}
+.container .confirmation {
+  margin-bottom: 20px;
+}
+
+.container .confirmation a {
+  color: #3fa0d4;
+  text-decoration: none;
+}
+
+.container .form-outer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.form-outer form {
+  display: flex;
+  width: 400%;
+}
+
+.form-outer form .page {
+  width: 25%;
+}
+
+.form-outer form .page .title {
+  text-align: left;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.form-outer form .page .field {
+  margin-bottom: 25px; /* Adjusted margin for spacing */
+  position: relative;
+}
+
+.form-outer form .page .field .label {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  text-align: left;
+  font-weight: bolder;
+}
+
+.form-outer form .page .field input,
+.form-outer form .page .field select {
+  width: 100%;
+  height: 40px; /* Adjusted height for input fields */
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-size: 18px;
+  padding-left: 15px;
+  box-sizing: border-box; /* Ensures padding is included in width calculation */
+}
+
+.form-outer form .page .field button {
+  width: calc(50% - 5px); /* Adjusted width for buttons */
+  height: 45px;
+  border: none;
+  background: #3fa0d4;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.form-outer form .page .field button:hover {
+  background: #000;
+}
+
+.form-outer form .page .btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-outer form .page .btns button.prev,
+.form-outer form .page .btns button.next {
+  font-size: 17px;
+}
+
+.container .progress-bar {
+  display: flex;
+  margin: 40px 0;
+}
+
+.container .progress-bar .step {
+  text-align: center;
+  width: 100%;
+}
+
+.progress-bar .step .bullet {
+  height: 25px;
+  width: 25px;
+  position: relative;
+  border: 2px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  font-weight: 500;
+  font-size: 17px;
+  transition: background-color 0.3s ease; /* Added transition for smooth effect */
+}
+
+/*----------------------------------------------------------------*/
+
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after {
+  display: none;
+}
+
+.progress-bar .step .bullet:after {
+  background: #3fa0d4;
+  animation: animate 0.3s linear infinite;
+  transform: scale(1);
+}
+
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 44px;
+  right: -51px;
+  bottom: 11px;
+  background: #262626;
+}
+
+/*----------------------------------------------------------------*/
+
+.progress-bar .step .bullet.active {
+  background-color: #3fa0d4;
+  animation: pulse 1s infinite alternate;
+}
+
+.progress-bar .step .name {
+  font-weight: 500;
+  font-size: 17px;
+  transition: color 0.3s ease; /* Added transition for smooth effect */
+}
+
+.progress-bar .step .name.active {
+  color: #3fa0d4;
+}
+
+.progress-bar .step .check {
+  display: none;
+}
